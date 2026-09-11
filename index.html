@@ -114,7 +114,7 @@ const SUBTITLE="Links e descontos";
 const INSTAGRAM_URL="https://www.instagram.com/diariodasofy40";
 const FACEBOOK_URL="https://www.facebook.com/diariodasofy";
 const TIKTOK_URL="https://www.tiktok.com/@sofiag5083";
-const INSTAGRAM_AVATAR_URL="";
+const INSTAGRAM_AVATAR_URL="https://diariodasofy.github.io/store/insta_perfil.jpeg";
 
 let products=[],selectedCategory="";
 function parseCSV(t){let a=[],r=[],c="",q=false;for(let i=0;i<t.length;i++){let x=t[i],n=t[i+1];if(x=='"'&&q&&n=='"'){c+='"';i++}else if(x=='"')q=!q;else if(x==','&&!q){r.push(c);c=""}else if((x=='\n'||x=='\r')&&!q){if(x=='\r'&&n=='\n')i++;r.push(c);if(r.some(v=>v.trim()))a.push(r);r=[];c=""}else c+=x}if(c||r.length){r.push(c);a.push(r)}let h=a.shift().map(v=>v.trim().toLowerCase());return a.map(v=>Object.fromEntries(h.map((k,i)=>[k,(v[i]||"").trim()])))}
