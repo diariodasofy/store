@@ -56,15 +56,6 @@ input:focus,select:focus{outline:none;border-color:var(--pink)}
 
 .empty{text-align:center;padding:40px 16px;color:#a05a78}
 footer{text-align:center;color:#c084a8;font-size:11px;padding:22px 16px}
-
-  /* ===== Redes sociais: Instagram, Facebook, TikTok ===== */
-  .social-links{display:flex;justify-content:center;align-items:center;gap:12px;margin:4px auto 2px}
-  .social-links a{display:inline-flex;text-decoration:none;color:var(--pink-dark)}
-  .social-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #f3c6dd;box-shadow:0 2px 8px #0000000d;transition:transform .12s ease,box-shadow .12s ease,color .12s ease}
-  .social-icon svg{width:21px;height:21px;display:block}
-  .social-links a:active .social-icon{transform:scale(.94)}
-  @media(hover:hover){.social-links a:hover .social-icon{transform:translateY(-2px);box-shadow:0 6px 14px #e0227a26;color:var(--pink)}}
-
 </style>
 </head>
 <body>
@@ -112,8 +103,6 @@ const SUBTITLE="Links e descontos";
    Se deixares vazio, o espaço da foto fica automaticamente escondido.
 */
 const INSTAGRAM_URL="https://www.instagram.com/diariodasofy40/";
-const FACEBOOK_URL="https://www.facebook.com/diariodasofy";
-const TIKTOK_URL="https://www.tiktok.com/@sofiag5083";
 const INSTAGRAM_AVATAR_URL="https://diariodasofy.github.io/store/insta_perfil.jpeg";
 
 let products=[],selectedCategory="";
@@ -143,9 +132,6 @@ function track(product,partner){if(window.gtag)gtag('event','partner_click',{pro
 document.getElementById("brand").textContent=BRAND_NAME;
 document.getElementById("subtitle").textContent=SUBTITLE;
 document.getElementById("igLink").href=INSTAGRAM_URL;
-document.getElementById("socialInstagram").href=INSTAGRAM_URL;
-document.getElementById("socialFacebook").href=FACEBOOK_URL;
-document.getElementById("socialTikTok").href=TIKTOK_URL;
 if(INSTAGRAM_AVATAR_URL){document.getElementById("igAvatar").src=INSTAGRAM_AVATAR_URL}else{document.querySelector(".ig-avatar-link").style.display="none"}
 
 load().catch(()=>document.getElementById("grid").innerHTML='<div class="empty">Erro ao carregar o Google Sheets.</div>');
